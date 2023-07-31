@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import {HttpClientModule} from '@Angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
+import { RouterModule } from '@angular/router';
+import { BaseService } from './services/base.service';
+import { routes } from './Routes';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent
   ],
+
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [BaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
