@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Yorum } from '../model/Comment';
 
 @Injectable({
   providedIn:"any"
@@ -10,8 +11,8 @@ export class BaseService {
 
   constructor(public http:HttpClient) { }
 
-  getReq():Observable<Comment[]>{
-    return this.http.get<Comment[]>("https://jsonplaceholder.typicode.com/comments")
+  getReq():Observable<Yorum[]>{
+    return this.http.get<Yorum[]>("https://jsonplaceholder.typicode.com/comments")
   }
 
 

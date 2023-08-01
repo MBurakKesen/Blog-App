@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div class="container">
+    <div class="row">
+        <div  class="col-md-4" *ngFor="let data of comments | paginate: { itemsPerPage: 10, currentPage: p }" >
+            <div class="card" style="width: 18rem;">
+
+                <div class="card-body">
+                    <h5 class="card-title">{{data.id}}</h5>
+                    <p class="card-text">{{data.name}}</p>
+                    <a href="#" class="btn btn-primary">{{data.postId}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="div" style="display: flex;
+flex-wrap:wrap;
+justify-content: center;
+align-items: center;">
+    <pagination-controls (pageChange)="p = $event">
+        <button type="button" class="btn btn-primary">p</button>
+    </pagination-controls>
+</div>

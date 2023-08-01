@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Yorum } from 'src/app/model/Comment';
 import { BaseService } from 'src/app/services/base.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit  {
     
   }
 
-  comments:Comment[]=[]
+  comments:Yorum[]=[]
   
   getReq(){
       this.baseService.getReq().subscribe(response=>{
@@ -23,6 +24,6 @@ export class HomeComponent implements OnInit  {
       })
     }
   
-
+    p: number = 1;
     
 }

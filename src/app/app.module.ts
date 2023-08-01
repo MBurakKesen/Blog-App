@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import {NgxPaginationModule} from 'ngx-pagination';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
@@ -15,6 +16,7 @@ import { routes } from './Routes';
   ],
 
   imports: [
+    NgxPaginationModule,
     HttpClientModule,
     BrowserModule,
     RouterModule.forRoot(routes)
